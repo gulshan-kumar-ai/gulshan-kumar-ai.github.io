@@ -1,289 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gulshan Kumar — AI Student, Machine Learning</title>
-  <meta name="description" content="Gulshan Kumar, MSc AI student at University of Verona, machine learning, data science, social leader, YouTuber. Portfolio, projects, CV and contact.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Gulshan Kumar — AI Student" />
-  <meta property="og:description" content="Portfolio of Gulshan Kumar, AI student and machine learning practitioner." />
-  <meta property="og:type" content="website" />
+  <title>Gulshan Kumar — AI Portfolio</title>
+  <meta name="description" content="Portfolio of Gulshan Kumar, MSc AI student at University of Verona. Passionate about Machine Learning, Data Science, and Applied AI research.">
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --muted:#6b7280;
-      --text:#0f172a;
-      --accent:#0ea5a4; /* teal */
-      --accent-2:#2563eb; /* blue */
-      --card:#f8fafc;
-      --glass: rgba(15,23,42,0.04);
-      --radius:12px;
-      --maxw:1100px;
-      --shadow: 0 6px 18px rgba(2,6,23,0.08);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #0ea5a4;
+      --accent-2: #2563eb;
+      --radius: 12px;
+      --shadow: 0 6px 16px rgba(0,0,0,0.5);
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg, #fbfdff 0%, #f6f8fb 100%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px;}
-
-    /* header */
-    header{position:sticky;top:0;background:rgba(255,255,255,0.86);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.04);z-index:40}
-    .nav{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:16px;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:600}
-    .brand h1{font-size:16px;margin:0}
-    .nav-links{display:flex;gap:14px;align-items:center}
-    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px}
-    .nav-links a:hover{background:var(--glass);color:var(--text)}
-
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:44px 0}
-    .hero-left h2{font-size:34px;margin:0 0 12px 0}
-    .hero-left p.lead{color:var(--muted);margin:0 0 18px 0;font-size:15px}
-    .ctas{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;
-      text-decoration:none;font-weight:600;font-size:14px;border:1px solid transparent;
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(13,17,23,0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      z-index: 50;
     }
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:var(--shadow)}
-    .btn-outline{background:transparent;border-color:rgba(2,6,23,0.06);color:var(--text)}
-    .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:14px}
-
-    .hero-card{background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow);border:1px solid rgba(2,6,23,0.04)}
-    .profile{display:flex;gap:14px;align-items:center}
-    .profile img{width:76px;height:76px;border-radius:12px;object-fit:cover}
-    .profile h3{margin:0;font-size:18px}
-    .profile p{margin:0;color:var(--muted);font-size:13px}
-
-    /* sections */
-    section{padding:42px 0;border-bottom:1px solid rgba(2,6,23,0.03)}
-    h3.section-title{font-size:20px;margin:0 0 18px 0;color:var(--text)}
-    .grid{display:grid;gap:18px}
-    .cols-3{grid-template-columns:repeat(3,1fr)}
-    .cols-2{grid-template-columns:repeat(2,1fr)}
-    .card{background:white;border-radius:12px;padding:16px;border:1px solid rgba(2,6,23,0.04);box-shadow:0 4px 14px rgba(2,6,23,0.04)}
-    .small{font-size:13px;color:var(--muted)}
-
-    /* skills */
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{padding:8px 10px;border-radius:999px;background:#f1f5f9;border:1px solid rgba(2,6,23,0.03);font-weight:600;font-size:13px;color:var(--text)}
-
-    /* projects */
-    .project{display:flex;gap:12px;align-items:flex-start}
-    .project img{width:120px;height:80px;border-radius:8px;object-fit:cover}
-    .project h4{margin:0 0 6px 0}
-    .project p{margin:0;color:var(--muted);font-size:14px}
-
-    /* timeline */
-    .timeline{display:flex;flex-direction:column;gap:12px}
-    .timeline-item{display:flex;gap:12px;align-items:flex-start}
-    .timeline-item .dot{width:12px;height:12px;border-radius:999px;background:var(--accent);margin-top:8px}
-    .timeline-item .content h4{margin:0;font-size:15px}
-    .timeline-item .content .meta{font-size:13px;color:var(--muted)}
-
-    /* achievements */
-    .ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-
-    /* gallery */
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer}
-    .modal{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:all .25s}
-    .modal.open{visibility:visible;opacity:1}
-    .modal img{max-width:90%;max-height:85%;border-radius:10px;box-shadow:0 20px 60px rgba(2,6,23,0.6)}
-
-    /* youtube embed */
-    .youtube{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
-    .video{background:white;border-radius:10px;overflow:hidden;border:1px solid rgba(2,6,23,0.04)}
-    .subscribe{display:flex;flex-direction:column;gap:8px;align-items:center;padding:16px;border-radius:10px;background:#fbfbff;border:1px solid rgba(2,6,23,0.03)}
-
-    /* contact */
-    form{display:grid;gap:12px}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);font-size:14px}
-    textarea{min-height:120px;resize:vertical}
-
-    /* footer */
-    footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr;gap:18px}
-      .youtube{grid-template-columns:1fr}
-      .gallery{grid-template-columns:repeat(2,1fr)}
-      .cols-3{grid-template-columns:repeat(2,1fr)}
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    @media (max-width:520px){
-      .nav-links{display:none}
-      .gallery{grid-template-columns:repeat(1,1fr)}
-      .cols-2{grid-template-columns:1fr}
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      padding: 80px 20px;
+      align-items: center;
+    }
+    .hero h1 { font-size: 2.4rem; margin: 0 0 16px; }
+    .hero p { color: var(--muted); margin-bottom: 24px; font-size: 1.1rem; }
+    .btn {
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 10px;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: white; }
+    .btn-outline { border: 1px solid var(--muted); color: var(--text); }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    h2 { font-size: 1.8rem; margin-bottom: 24px; text-align: center; }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .grid-2 { grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.7); }
+    .card h3 { margin-top: 0; }
+
+    .tag {
+      background: rgba(99,102,241,0.2);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin: 4px 6px 0 0;
+      display: inline-block;
+      color: #c7d2fe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: var(--muted);
+      background: #111827;
+    }
+
+    @media(max-width:768px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
 
-  <!-- header -->
   <header>
-    <nav class="nav">
-      <a href="/" class="brand" aria-label="Gulshan Kumar">
-        <div class="logo">GK</div>
-        <div>
-          <h1>Gulshan Kumar</h1>
-          <div style="font-size:12px;color:var(--muted)">MSc AI, University of Verona</div>
-        </div>
-      </a>
-
-      <div class="nav-links">
+    <nav>
+      <strong style="color:var(--text);">Gulshan Kumar</strong>
+      <div>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#youtube">YouTube</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main class="wrap">
-    <!-- hero -->
-    <section class="hero" id="home" aria-label="Hero">
-      <div class="hero-left">
-        <h2>Hello, I am Gulshan Kumar</h2>
-        <p class="lead">Master's student in Artificial Intelligence, machine learning practitioner, and community leader. I build ML solutions for healthcare and smart farming, I write technical posts, and I share my journey on YouTube.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Hello, I am Gulshan 👋</h1>
+      <p>MSc AI student at University of Verona. I build ML solutions for healthcare, smart farming, and AI-driven analytics.</p>
+      <a class="btn btn-primary" href="assets/Gulshan_Kumar_CV.pdf" download>Download CV</a>
+      <a class="btn btn-outline" href="https://github.com/gulshan-kumar-ai" target="_blank">GitHub</a>
+    </div>
+    <img src="assets/images/profile.jpg" alt="Profile photo" style="width:100%;border-radius:var(--radius)">
+  </section>
 
-        <div class="ctas">
-          <a class="btn btn-primary" href="assets/Gulshan_Kumar_CV.pdf" download="Gulshan_Kumar_CV.pdf">Download CV</a>
-          <a class="btn btn-outline" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-outline" href="https://youtube.com/@gulshanineurope" target="_blank" rel="noopener">YouTube</a>
-        </div>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="max-width:800px;margin:auto;text-align:center;color:var(--muted);">
+      I am passionate about applying machine learning to real-world problems. 
+      My focus areas include surgical workflow analysis, smart farming resilience, 
+      and applied research in AI. I also lead youth initiatives, mentor students, and share knowledge online.
+    </p>
+  </section>
 
-        <div class="meta" style="margin-top:16px">
-          <div>Open to thesis projects, internships, and research collaborations</div>
-          <div style="margin-left:10px">•</div>
-          <div>Verona, Italy</div>
-        </div>
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Programming</h3>
+        <span class="tag">Python</span><span class="tag">JavaScript</span>
+        <span class="tag">React</span><span class="tag">SQL</span>
       </div>
-
-      <aside class="hero-card">
-        <div class="profile">
-          <img src="assets/images/profile.jpg" alt="Gulshan Kumar, profile photo" />
-          <div>
-            <h3>Gulshan Kumar</h3>
-            <p class="small">AI student, ML practitioner, YouTuber</p>
-            <div style="height:10px"></div>
-            <div class="small">Email: <a href="mailto:gulshan.kumar@studenti.univr.it">gulshan.kumar@studenti.univr.it</a></div>
-            <div class="small">Location: Verona, Italy</div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- about -->
-    <section id="about" aria-label="About">
-      <h3 class="section-title">About me</h3>
-      <div class="card" style="display:flex;gap:18px;align-items:flex-start;flex-direction:column">
-        <p style="margin:0;color:var(--muted)">
-          I am a second year Master of Science student in Artificial Intelligence at the University of Verona, with hands-on experience in surgical workflow analysis, ML for smart farming, and applied research. I work with Python, PyTorch, OpenCV, and data engineering tools. I lead youth initiatives, mentor students, and publish technical content on YouTube.
-        </p>
-
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-          <div style="min-width:220px">
-            <strong>Focus areas</strong>
-            <div class="small" style="margin-top:6px">Surgical workflow analysis, smart farming resilience, model deployment, research papers</div>
-          </div>
-          <div style="min-width:220px">
-            <strong>Languages</strong>
-            <div class="small" style="margin-top:6px">English, Urdu, Sindhi</div>
-          </div>
-          <div style="min-width:220px">
-            <strong>Tools</strong>
-            <div class="small" style="margin-top:6px">Python, PyTorch, TensorFlow, Git, Docker, SQL, React</div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Machine Learning</h3>
+        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
+        <span class="tag">Scikit-learn</span><span class="tag">OpenCV</span>
       </div>
-    </section>
-
-    <!-- skills -->
-    <section id="skills" aria-label="Skills">
-      <h3 class="section-title">Technical skills</h3>
-      <div class="grid cols-3">
-        <div class="card">
-          <h4 style="margin-top:0">Programming & Web</h4>
-          <div class="tags" style="margin-top:10px">
-            <div class="tag">Python</div><div class="tag">JavaScript</div><div class="tag">React</div><div class="tag">HTML</div><div class="tag">CSS</div><div class="tag">Node.js</div>
-          </div>
-        </div>
-        <div class="card">
-          <h4 style="margin-top:0">Machine Learning</h4>
-          <div class="tags" style="margin-top:10px">
-            <div class="tag">PyTorch</div><div class="tag">TensorFlow</div><div class="tag">Scikit-learn</div><div class="tag">Hugging Face</div><div class="tag">OpenCV</div>
-          </div>
-        </div>
-        <div class="card">
-          <h4 style="margin-top:0">Data & Cloud</h4>
-          <div class="tags" style="margin-top:10px">
-            <div class="tag">SQL</div><div class="tag">Pandas</div><div class="tag">Docker</div><div class="tag">AWS</div><div class="tag">Linux</div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <span class="tag">Docker</span><span class="tag">Git</span>
+        <span class="tag">AWS</span><span class="tag">Linux</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- projects -->
-    <section id="projects" aria-label="Projects">
-      <h3 class="section-title">Featured projects</h3>
-      <div class="grid cols-2">
-        <div class="card project">
-          <img src="assets/images/project-surgical.jpg" alt="Surgical workflow analysis screenshot" />
-          <div>
-            <h4>Surgical Workflow Analysis</h4>
-            <p class="small">Time series and video analysis to predict procedural steps, using PyTorch and OpenCV. Includes training pipelines, evaluation metrics, and dashboards.</p>
-            <div style="margin-top:8px">
-              <a class="small" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-        <div class="card project">
-          <img src="assets/images/project-smartfarm.jpg" alt="Smart farming project" />
-          <div>
-            <h4>Smart Farming, Cyber Resilience</h4>
-            <p class="small">Prototype for anomaly detection in IoT-based smart farms, dataset collection, and deployment plan with Docker and monitoring.</p>
-            <div style="margin-top:8px">
-              <a class="small" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-        <div class="card project">
-          <img src="assets/images/project-analytics.jpg" alt="Data analytics project" />
-          <div>
-            <h4>Data Analytics & Dashboards</h4>
-            <p class="small">End-to-end analytics project, ETL, dashboards, automated reporting for stakeholders using Python and Power BI/Tableau.</p>
-            <div style="margin-top:8px">
-              <a class="small" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-        <div class="card project">
-          <img src="assets/images/project-web.jpg" alt="Web project" />
-          <div>
-            <h4>Portfolio & Web Tools</h4>
-            <p class="small">Personal site, small web tools, and automation scripts. Built with HTML, CSS, and React components.</p>
-            <div style="margin-top:8px">
-              <a class="small" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a>
-            </div>
-          </div>
-        </div>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Surgical Workflow Analysis</h3>
+        <p>Predicting procedural steps from video and time-series data using PyTorch and OpenCV.</p>
       </div>
-    </section
+      <div class="card">
+        <h3>Smart Farming Resilience</h3>
+        <p>IoT anomaly detection system for cyber resilience in smart agriculture.</p>
+      </div>
+      <div class="card">
+        <h3>Data Analytics Dashboards</h3>
+        <p>ETL pipelines, automated reporting, and visualization for stakeholders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      Email: <a href="mailto:gulshan.kumar@studenti.univr.it" style="color:var(--accent)">gulshan.kumar@studenti.univr.it</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank" style="color:var(--accent)">linkedin.com/in/gulshan-kumar-ai</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Gulshan Kumar. Built with ❤️ using GitHub Pages.
+  </footer>
+
+</body>
+</html>
