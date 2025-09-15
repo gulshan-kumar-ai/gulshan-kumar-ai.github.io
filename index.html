@@ -1,219 +1,482 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gulshan Kumar — AI Portfolio</title>
-  <meta name="description" content="Portfolio of Gulshan Kumar, MSc AI student at University of Verona. Passionate about Machine Learning, Data Science, and Applied AI research.">
+  <title>Gulshan Kumar — AI · Machine Learning · Research</title>
+  <meta name="description" content="Gulshan Kumar — MSc AI student (University of Verona). Portfolio: projects, publications, CV, experience and contact." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gulshan Kumar — AI Portfolio" />
+  <meta property="og:description" content="MSc AI student. ML for healthcare and smart farming. Projects, publications, CV and contact." />
+  <meta property="og:image" content="/assets/images/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data (Person + sameAs links) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gulshan Kumar",
+    "url": "https://gulshan-kumar-ai.github.io/",
+    "jobTitle": "MSc Artificial Intelligence student",
+    "alumniOf": "University of Verona",
+    "sameAs": [
+      "https://github.com/gulshan-kumar-ai",
+      "https://www.linkedin.com/in/gulshan-kumar-ai/",
+      "https://youtube.com/@gulshanineurope"
+    ]
+  }
+  </script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --accent: #0ea5a4;
-      --accent-2: #2563eb;
-      --radius: 12px;
-      --shadow: 0 6px 16px rgba(0,0,0,0.5);
+    :root{
+      --bg:#0b0f13;
+      --panel:#0f1720;
+      --muted:#9aa5b1;
+      --text:#e6eef6;
+      --accent:#06b6d4;
+      --accent-2:#2563eb;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxw:1100px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{margin:0;background:linear-gradient(180deg,#07090b 0%, #0b0f13 100%);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.5}
+
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    /* layout */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px}
+
+    /* header */
+    header{position:sticky;top:0;background:rgba(6,8,10,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:60}
+    .nav{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#031029;font-weight:700}
+    .brand h1{font-size:16px;margin:0}
+
+    .navlinks{display:flex;gap:12px;align-items:center}
+    .navlinks a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px}
+    .navlinks a:hover{background:var(--glass);color:var(--text)}
+
+    .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;padding:44px 0}
+    .hero-left h2{font-size:34px;margin:0 0 12px 0}
+    .lead{color:var(--muted);margin:0 0 18px 0;font-size:15px}
+
+    .ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid transparent}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021025;box-shadow:0 8px 26px rgba(37,99,235,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)}
+    .profile{display:flex;gap:14px;align-items:center}
+    .profile img{width:86px;height:86px;border-radius:14px;object-fit:cover}
+    .profile h3{margin:0;font-size:18px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* sections */
+    section{padding:42px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    h3.section-title{font-size:20px;margin:0 0 18px 0;color:var(--text)}
+
+    .grid{display:grid;gap:18px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* timeline */
+    .timeline{display:flex;flex-direction:column;gap:14px}
+    .timeline-item{display:flex;gap:12px;align-items:flex-start}
+    .dot{width:12px;height:12px;border-radius:999px;background:var(--accent);margin-top:8px}
+
+    /* skills */
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);font-weight:700;font-size:13px;color:var(--text)}
+
+    .skill-row{display:flex;flex-direction:column;gap:8px}
+    .skill-name{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+    .skill-bar{height:10px;border-radius:999px;background:rgba(255,255,255,0.03);overflow:hidden}
+    .skill-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px;transition:width 900ms ease}
+
+    /* projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .project-card{display:flex;flex-direction:column;gap:10px}
+    .project-card img{height:140px;object-fit:cover;border-radius:8px}
+
+    /* publications */
+    .pub-list{display:flex;flex-direction:column;gap:10px}
+    .pub{display:flex;flex-direction:column;gap:6px}
+
+    /* contact */
+    form{display:grid;gap:12px;max-width:640px}
+    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);font-size:14px}
+    input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.35)}
+
+    /* footer */
+    footer{padding:30px 0;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:18px}
+      .cols-3{grid-template-columns:repeat(2,1fr)}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .navlinks{display:none}
+      .projects-grid{grid-template-columns:1fr}
+      .cols-2{grid-template-columns:1fr}
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(13,17,23,0.9);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-      z-index: 50;
-    }
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      text-decoration: none;
-      margin: 0 10px;
-      color: var(--muted);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--accent); }
+    /* small helper */
+    .muted{color:var(--muted)}
+    .center{display:flex;align-items:center;justify-content:center}
 
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 32px;
-      padding: 80px 20px;
-      align-items: center;
-    }
-    .hero h1 { font-size: 2.4rem; margin: 0 0 16px; }
-    .hero p { color: var(--muted); margin-bottom: 24px; font-size: 1.1rem; }
-    .btn {
-      padding: 10px 16px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 10px;
-      display: inline-block;
-      transition: transform 0.2s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: white; }
-    .btn-outline { border: 1px solid var(--muted); color: var(--text); }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    h2 { font-size: 1.8rem; margin-bottom: 24px; text-align: center; }
-    .grid {
-      display: grid;
-      gap: 20px;
-    }
-    .grid-2 { grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); }
-    .grid-3 { grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
-
-    .card {
-      background: var(--card);
-      padding: 24px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.7); }
-    .card h3 { margin-top: 0; }
-
-    .tag {
-      background: rgba(99,102,241,0.2);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin: 4px 6px 0 0;
-      display: inline-block;
-      color: #c7d2fe;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: var(--muted);
-      background: #111827;
-    }
-
-    @media(max-width:768px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
   </style>
 </head>
 <body>
-
   <header>
-    <nav>
-      <strong style="color:var(--text);">Gulshan Kumar</strong>
-      <div>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Gulshan Kumar home">
+        <div class="logo">GK</div>
+        <div>
+          <h1>Gulshan Kumar</h1>
+          <div class="small muted">MSc AI — University of Verona</div>
+        </div>
+      </a>
+
+      <div class="navlinks" role="navigation" aria-label="Section links">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="btn btn-ghost" href="assets/Gulshan_Kumar_CV.pdf" download="Gulshan_Kumar_CV.pdf">Download CV</a>
+        <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Toggle light/dark">🌗</button>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div>
-      <h1>Hello, I am Gulshan 👋</h1>
-      <p>MSc AI student at University of Verona. I build ML solutions for healthcare, smart farming, and AI-driven analytics.</p>
-      <a class="btn btn-primary" href="assets/Gulshan_Kumar_CV.pdf" download>Download CV</a>
-      <a class="btn btn-outline" href="https://github.com/gulshan-kumar-ai" target="_blank">GitHub</a>
-    </div>
-    <img src="assets/images/profile.jpg" alt="Profile photo" style="width:100%;border-radius:var(--radius)">
-  </section>
+  <main class="wrap" id="home">
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p style="max-width:800px;margin:auto;text-align:center;color:var(--muted);">
-      I am passionate about applying machine learning to real-world problems. 
-      My focus areas include surgical workflow analysis, smart farming resilience, 
-      and applied research in AI. I also lead youth initiatives, mentor students, and share knowledge online.
-    </p>
-  </section>
+    <!-- hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <h2>Hello, I’m <strong>Gulshan Kumar</strong></h2>
+        <p class="lead">MSc Artificial Intelligence student at University of Verona. I work on machine learning for healthcare and smart farming, model deployment, and reproducible research.</p>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="grid grid-3">
-      <div class="card">
-        <h3>Programming</h3>
-        <span class="tag">Python</span><span class="tag">JavaScript</span>
-        <span class="tag">React</span><span class="tag">SQL</span>
-      </div>
-      <div class="card">
-        <h3>Machine Learning</h3>
-        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
-        <span class="tag">Scikit-learn</span><span class="tag">OpenCV</span>
-      </div>
-      <div class="card">
-        <h3>Tools</h3>
-        <span class="tag">Docker</span><span class="tag">Git</span>
-        <span class="tag">AWS</span><span class="tag">Linux</span>
-      </div>
-    </div>
-  </section>
+        <div class="ctas">
+          <a class="btn btn-primary" href="assets/Gulshan_Kumar_CV.pdf" download>Download CV</a>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+          <a class="btn btn-ghost" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">GitHub</a>
+        </div>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Surgical Workflow Analysis</h3>
-        <p>Predicting procedural steps from video and time-series data using PyTorch and OpenCV.</p>
+        <div style="margin-top:18px;color:var(--muted);font-size:14px;display:flex;gap:12px;flex-wrap:wrap">
+          <div>📍 Verona, Italy</div>
+          <div>•</div>
+          <div>Open to thesis projects & internships</div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Smart Farming Resilience</h3>
-        <p>IoT anomaly detection system for cyber resilience in smart agriculture.</p>
-      </div>
-      <div class="card">
-        <h3>Data Analytics Dashboards</h3>
-        <p>ETL pipelines, automated reporting, and visualization for stakeholders.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center;">
-      Email: <a href="mailto:gulshan.kumar@studenti.univr.it" style="color:var(--accent)">gulshan.kumar@studenti.univr.it</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank" style="color:var(--accent)">linkedin.com/in/gulshan-kumar-ai</a>
-    </p>
-  </section>
+      <aside class="hero-card" aria-label="Profile card">
+        <div class="profile">
+          <img src="assets/images/profile.jpg" alt="Gulshan Kumar profile photo" loading="lazy" />
+          <div>
+            <h3>Gulshan Kumar</h3>
+            <p class="small">AI student • ML practitioner • YouTuber</p>
+            <div style="height:10px"></div>
+            <div class="small">Email: <a href="mailto:gulshan.kumar@studenti.univr.it">gulshan.kumar@studenti.univr.it</a></div>
+            <div class="small">LinkedIn: <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank" rel="noopener">linkedin.com/in/gulshan-kumar-ai</a></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- about / summary -->
+    <section id="about" aria-label="About">
+      <h3 class="section-title">Summary</h3>
+      <div class="card">
+        <p class="muted" style="margin:0">I am a second-year MSc student in Artificial Intelligence at the University of Verona with practical experience in surgical workflow analysis, ML for smart farming, computer vision and field deployment. I write reproducible research, mentor students, and publish technical content.</p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+          <div style="min-width:220px">
+            <strong>Focus</strong>
+            <div class="small muted" style="margin-top:6px">Surgical workflows • Smart farming • Model deployment • Research</div>
+          </div>
+          <div style="min-width:220px">
+            <strong>Languages</strong>
+            <div class="small muted" style="margin-top:6px">English • Urdu • Sindhi</div>
+          </div>
+          <div style="min-width:220px">
+            <strong>Tools</strong>
+            <div class="small muted" style="margin-top:6px">Python • PyTorch • TensorFlow • Docker • Git • SQL</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- skills -->
+    <section id="skills" aria-label="Skills">
+      <h3 class="section-title">Technical Skills</h3>
+      <div class="grid cols-3">
+        <div class="card">
+          <h4 style="margin-top:0">Programming & Web</h4>
+          <div class="tags" style="margin-top:10px">
+            <div class="tag">Python</div><div class="tag">JavaScript</div><div class="tag">React</div><div class="tag">HTML</div><div class="tag">CSS</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-top:0">Machine Learning</h4>
+          <div class="tags" style="margin-top:10px">
+            <div class="tag">PyTorch</div><div class="tag">TensorFlow</div><div class="tag">Scikit-learn</div><div class="tag">Hugging Face</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-top:0">Data & Cloud</h4>
+          <div class="tags" style="margin-top:10px">
+            <div class="tag">SQL</div><div class="tag">Pandas</div><div class="tag">Docker</div><div class="tag">AWS</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h4 style="margin-top:0">Skill levels</h4>
+        <div class="skill-row">
+          <div class="skill-name"><span>Python</span><span>95%</span></div>
+          <div class="skill-bar" aria-hidden><div class="skill-fill" data-level="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name"><span>PyTorch</span><span>88%</span></div>
+          <div class="skill-bar" aria-hidden><div class="skill-fill" data-level="88"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name"><span>Computer Vision (OpenCV)</span><span>82%</span></div>
+          <div class="skill-bar" aria-hidden><div class="skill-fill" data-level="82"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- projects -->
+    <section id="projects" aria-label="Projects">
+      <h3 class="section-title">Selected Projects</h3>
+      <div class="projects-grid">
+
+        <article class="card project-card">
+          <img src="assets/images/project-surgical.jpg" alt="Surgical workflow project" loading="lazy">
+          <div>
+            <h4 style="margin:0">Surgical Workflow Analysis</h4>
+            <p class="muted" style="margin:6px 0 10px 0">Video/time-series models to predict procedural steps. PyTorch, OpenCV, evaluation dashboards.</p>
+            <p style="margin:0"><a class="btn btn-ghost" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/project-smartfarm.jpg" alt="Smart farming" loading="lazy">
+          <div>
+            <h4 style="margin:0">Smart Farming — Anomaly Detection</h4>
+            <p class="muted" style="margin:6px 0 10px 0">IoT data pipeline, anomaly detection for hardware resilience and monitoring (Docker deployable).</p>
+            <p style="margin:0"><a class="btn btn-ghost" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a></p>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/project-analytics.jpg" alt="Data analytics" loading="lazy">
+          <div>
+            <h4 style="margin:0">Data Analytics & Dashboards</h4>
+            <p class="muted" style="margin:6px 0 10px 0">ETL pipelines, automated reporting, interactive dashboards for stakeholders.</p>
+            <p style="margin:0"><a class="btn btn-ghost" href="https://github.com/gulshan-kumar-ai" target="_blank" rel="noopener">View on GitHub</a></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- experience / timeline -->
+    <section id="experience" aria-label="Experience">
+      <h3 class="section-title">Experience & Education</h3>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <h4 style="margin-top:0">Experience</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="dot" aria-hidden></div>
+              <div class="content">
+                <h4 style="margin:0">Research Assistant — Surgical Workflow</h4>
+                <div class="muted small">University of Verona — 2024–Present</div>
+                <p class="muted" style="margin-top:8px">Developed video analysis pipelines and temporal models to detect procedural steps. Built training/eval pipelines and visualization dashboards.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot" aria-hidden></div>
+              <div class="content">
+                <h4 style="margin:0">ML Intern — Smart Farming</h4>
+                <div class="muted small">Internship Project — 2023</div>
+                <p class="muted" style="margin-top:8px">Prototype for anomaly detection on IoT sensor streams and Docker-based deployment for edge devices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-top:0">Education</h4>
+          <div>
+            <strong>MSc Artificial Intelligence</strong>
+            <div class="muted small">University of Verona — 2023–Present</div>
+            <div style="height:10px"></div>
+            <strong>BSc Computer Science (or your BSc)</strong>
+            <div class="muted small">University / College — YEAR</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- publications -->
+    <section id="publications" aria-label="Publications">
+      <h3 class="section-title">Publications & Reports</h3>
+      <div class="card pub-list">
+        <div class="pub">
+          <strong>Title of paper / preprint</strong>
+          <div class="muted small">Conference / Journal — YEAR</div>
+          <div><a href="#" class="muted">PDF / arXiv / DOI</a></div>
+        </div>
+        <!-- Add more items here. If you have DOIs, include them and link to the publisher. -->
+      </div>
+    </section>
+
+    <!-- certifications & achievements -->
+    <section id="achievements" aria-label="Achievements">
+      <h3 class="section-title">Certifications & Achievements</h3>
+      <div class="grid cols-3">
+        <div class="card">Certificate: Deep Learning Specialization — Coursera (YEAR)</div>
+        <div class="card">Award: Best Student Paper — XYZ Conference (YEAR)</div>
+        <div class="card">Scholarship / Fellowship (if any)</div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" aria-label="Contact">
+      <h3 class="section-title">Contact</h3>
+      <div class="grid cols-2">
+        <div>
+          <div class="card">
+            <p class="muted">Email: <a href="mailto:gulshan.kumar@studenti.univr.it">gulshan.kumar@studenti.univr.it</a></p>
+            <p class="muted">LinkedIn: <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank">linkedin.com/in/gulshan-kumar-ai</a></p>
+            <p class="muted">GitHub: <a href="https://github.com/gulshan-kumar-ai" target="_blank">github.com/gulshan-kumar-ai</a></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <!-- Simple contact form — replace action with your Formspree / Netlify / server endpoint -->
+            <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" placeholder="Your message" required></textarea>
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </form>
+            <p class="muted" style="margin-top:8px">Or email me directly at <a href="mailto:gulshan.kumar@studenti.univr.it">gulshan.kumar@studenti.univr.it</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    © 2025 Gulshan Kumar. Built with ❤️ using GitHub Pages.
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>Gulshan Kumar</strong> — <span class="muted">2025</span></div>
+        <div class="muted">Built with ❤️ • <a href="https://github.com/gulshan-kumar-ai" target="_blank">Source</a></div>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts: theme toggle, skill animation, form feedback -->
+  <script>
+    // Theme toggle (dark <-> light). Default dark; stores preference in localStorage.
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const LS_KEY = 'theme-preference-v1';
+
+      function applyTheme(name){
+        if(name === 'light'){
+          root.style.setProperty('--bg','#f6f8fb');
+          root.style.setProperty('--panel','#ffffff');
+          root.style.setProperty('--text','#0b1220');
+          root.style.setProperty('--muted','#475569');
+          btn.setAttribute('aria-pressed','true');
+        } else {
+          root.style.setProperty('--bg','#0b0f13');
+          root.style.setProperty('--panel','#0f1720');
+          root.style.setProperty('--text','#e6eef6');
+          root.style.setProperty('--muted','#9aa5b1');
+          btn.setAttribute('aria-pressed','false');
+        }
+      }
+
+      const stored = localStorage.getItem(LS_KEY);
+      applyTheme(stored || 'dark');
+
+      btn.addEventListener('click', ()=>{
+        const current = btn.getAttribute('aria-pressed') === 'true' ? 'light' : 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        localStorage.setItem(LS_KEY,next);
+      });
+    })();
+
+    // Animate skill bars when visible
+    (function(){
+      const fills = document.querySelectorAll('.skill-fill');
+      if('IntersectionObserver' in window){
+        const obs = new IntersectionObserver(entries=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              const el = entry.target; const level = el.dataset.level || 0;
+              el.style.width = level + '%';
+              obs.unobserve(el);
+            }
+          });
+        },{threshold:0.3});
+        fills.forEach(f=>obs.observe(f));
+      } else {
+        // fallback
+        fills.forEach(el=>el.style.width = el.dataset.level + '%');
+      }
+    })();
+
+    // Contact form feedback (basic client-side)
+    (function(){
+      const form = document.getElementById('contactForm');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        // optional: show immediate feedback — allow standard submission to Formspree
+        const submit = form.querySelector('button[type="submit"]');
+        submit.disabled = true; submit.textContent = 'Sending…';
+      });
+    })();
+
+    // keyboard accessibility for nav links (close mobile menus etc. if added later)
+  </script>
 </body>
 </html>
