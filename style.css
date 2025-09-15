@@ -1,146 +1,24 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #00ff88, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Body */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background: #0d0d0d; /* dark background */
-  color: #e0e0e0;
-}
-
-/* Header */
-header {
-  background: #111;
-  color: #e0e0e0;
-  padding: 2rem 1rem;
-  text-align: center;
-  border-bottom: 1px solid #00ff88;
-}
-
-header h1 {
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
-  color: #00ff88;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  background: #111;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid #00ff88;
-}
-
-nav ul li {
-  margin: 0 1rem;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #e0e0e0;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-nav ul li a:hover {
-  color: #00ff88;
-  transform: translateY(-2px);
-}
-
-/* Sections */
+/* Section Styling */
 section {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0,0,0,0.8);
   border-radius: 15px;
-  margin-bottom: 2rem;
-  border: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  border: 1px solid rgba(0,255,136,0.2);
   backdrop-filter: blur(5px);
+  color: #e0e0e0;
 }
 
 section h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.2rem;
-  color: #00ff88;
-}
-
-section p,
-section ul li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: #ccc;
-}
-
-/* Lists */
-ul li {
-  padding-left: 1.2rem;
-  position: relative;
-}
-
-ul li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #00ff88;
-}
-
-/* Footer */
-footer {
-  background: #111;
-  color: #aaa;
-  text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid #00ff88;
-}
-
-footer a {
-  color: #00ff88;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    padding: 1rem 0;
-  }
-  
-  nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 3rem 1rem;
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-  }
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
 }
