@@ -3,164 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulshan Kumar - Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #0d0d0d);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Header */
-    header {
-      background: rgba(0,0,0,0.9);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(0,255,136,0.3);
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #00ff88;
-    }
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-    .nav-links a {
-      color: #e0e0e0;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-      color: #00ff88;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .slider {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-    .slides {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      animation: slide 15s infinite;
-    }
-    .slides img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      filter: brightness(50%);
-    }
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0); }
-    }
-
-    .hero-content {
-      z-index: 1;
-      color: #fff;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(45deg, #00ff88, #00d4ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: linear-gradient(45deg, #00ff88, #00d4ff);
-      color: #000;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,255,136,0.3);
-    }
-
-    /* Footer */
-    footer {
-      background: rgba(0,0,0,0.85);
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 1px solid rgba(0,255,136,0.3);
-    }
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .footer-social a {
-      color: #e0e0e0;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .footer-social a:hover {
-      color: #00ff88;
-    }
-  </style>
+  <title>About - Gulshan Kumar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <nav class="container">
       <div class="logo">GK</div>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -171,29 +23,32 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="slider">
-      <div class="slides">
-        <img src="images/slide1.jpg" alt="Slide 1">
-        <img src="images/slide2.jpg" alt="Slide 2">
-        <img src="images/slide3.jpg" alt="Slide 3">
-      </div>
+  <section class="hero" style="height:auto; padding:4rem 0;">
+    <div class="container">
+      <h1 class="gradient-text">About Me</h1>
+      <p>I am Gulshan Kumar, an AI student, machine learning practitioner, YouTuber, and youth mentor.</p>
     </div>
-    <div class="hero-content">
-      <h1>Gulshan Kumar</h1>
-      <p>AI Student, Machine Learning Practitioner, and YouTuber</p>
-      <a href="projects.html" class="cta-button">View My Work</a>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="gradient-text">Who Am I?</h2>
+      <p>I am pursuing a Master's in Artificial Intelligence at the University of Verona, passionate about AI, data, and technology.</p>
+      <p>I have worked on AI projects, social initiatives, and content creation, aiming to create meaningful solutions.</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Gulshan Kumar. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/gulshan-kumar-ai" target="_blank">GitHub</a>
-      <a href="mailto:gulshankumar.ai@gmail.com">Email</a>
-      <a href="https://www.youtube.com/@gulshanineurope" target="_blank">YouTube</a>
+    <div class="container">
+      <p>&copy; 2025 Gulshan Kumar. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/gulshan-kumar-ai" target="_blank">GitHub</a>
+        <a href="mailto:gulshankumar.ai@gmail.com">Email</a>
+        <a href="https://www.youtube.com/@gulshanineurope" target="_blank">YouTube</a>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
