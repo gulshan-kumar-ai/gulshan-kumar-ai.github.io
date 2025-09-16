@@ -3,49 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Gulshan Kumar</title>
+  <title>Gulshan Kumar - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- SEO + Open Graph -->
+  <meta name="description" content="Gulshan Kumar - MSc AI student at University of Verona, Machine Learning practitioner, YouTuber. Explore my projects, skills, and experience.">
+  <meta property="og:title" content="Gulshan Kumar - AI Student Portfolio">
+  <meta property="og:description" content="MSc AI student at University of Verona, Machine Learning practitioner, YouTuber.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gulshan Kumar",
+    "url": "https://gulshan-kumar-ai.github.io",
+    "sameAs": [
+      "https://github.com/gulshan-kumar-ai",
+      "https://www.linkedin.com/in/gulshan-kumar-ai",
+      "https://www.youtube.com/@gulshanineurope"
+    ],
+    "jobTitle": "AI Student",
+    "affiliation": "University of Verona"
+  }
+  </script>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <nav class="container">
       <div class="logo">GK</div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" style="height:auto; padding:4rem 0;">
-    <div class="container">
-      <h1 class="gradient-text">About Me</h1>
-      <p>I am Gulshan Kumar, an AI student, machine learning practitioner, YouTuber, and youth mentor.</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero page-section">
+    <div class="container fade-in">
+      <h1 class="gradient-text">Hi, I'm Gulshan Kumar</h1>
+      <p>MSc AI student at the University of Verona, Machine Learning practitioner, YouTuber, and youth mentor.</p>
+      <div style="margin-top:2rem;">
+        <a href="assets/Gulshan_Kumar_CV.pdf" class="btn btn-primary" target="_blank">Download CV</a>
+        <a href="#projects" class="btn btn-secondary">View Projects</a>
+      </div>
     </div>
   </section>
 
-  <section>
+  <!-- About Section -->
+  <section id="about" class="page-section fade-in">
     <div class="container">
-      <h2 class="gradient-text">Who Am I?</h2>
-      <p>I am pursuing a Master's in Artificial Intelligence at the University of Verona, passionate about AI, data, and technology.</p>
-      <p>I have worked on AI projects, social initiatives, and content creation, aiming to create meaningful solutions.</p>
+      <h2 class="gradient-text">About Me</h2>
+      <p>I am passionate about Artificial Intelligence, Data, and Technology. My work spans AI projects, social initiatives, and educational content creation.</p>
+      <p>I aim to build solutions that are impactful and meaningful, while mentoring and inspiring others along the way.</p>
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section id="skills" class="page-section fade-in">
+    <div class="container">
+      <h2 class="gradient-text">Skills</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Machine Learning</h3>
+          <p>Regression, Classification, Model Deployment</p>
+        </div>
+        <div class="card">
+          <h3>Deep Learning</h3>
+          <p>PyTorch, CNNs, RNNs, Computer Vision</p>
+        </div>
+        <div class="card">
+          <h3>Data Science</h3>
+          <p>Pandas, NumPy, Data Cleaning, Visualization</p>
+        </div>
+        <div class="card">
+          <h3>Programming</h3>
+          <p>Python, C++, Git, SQL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="page-section fade-in">
+    <div class="container">
+      <h2 class="gradient-text">Projects</h2>
+      <p>Coming soon: A showcase of my best AI and ML projects.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="page-section fade-in">
+    <div class="container">
+      <h2 class="gradient-text">Contact</h2>
+      <p>Let's connect! Feel free to reach out to me on any of the platforms below.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Gulshan Kumar. All rights reserved.</p>
       <div class="footer-social">
-        <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/gulshan-kumar-ai" target="_blank">GitHub</a>
-        <a href="mailto:gulshankumar.ai@gmail.com">Email</a>
-        <a href="https://www.youtube.com/@gulshanineurope" target="_blank">YouTube</a>
+        <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank">in</a>
+        <a href="https://github.com/gulshan-kumar-ai" target="_blank">GH</a>
+        <a href="mailto:gulshankumar.ai@gmail.com">✉</a>
+        <a href="https://www.youtube.com/@gulshanineurope" target="_blank">YT</a>
       </div>
     </div>
   </footer>
