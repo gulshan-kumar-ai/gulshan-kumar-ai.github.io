@@ -1,154 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulshan Kumar — Portfolio</title>
-  <meta name="description" content="Portfolio of Gulshan Kumar - AI Student, ML Practitioner, YouTuber, and Youth Mentor. Explore my skills, projects, experience, and achievements.">
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Open Graph & Twitter -->
-  <meta property="og:title" content="Gulshan Kumar — AI Student">
-  <meta property="og:description" content="Portfolio of Gulshan Kumar: AI, ML, YouTube, Youth Mentor">
-  <meta property="og:image" content="images/profile.png">
-  <meta name="twitter:card" content="summary_large_image">
+/* Root variables */
+:root {
+  --bg: #0d0f10;
+  --panel: #111214;
+  --text: #e0e0e0;
+  --muted: #9aa0a6;
+  --accent: #00ff88;
+  --accent2: #00d4ff;
+}
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Gulshan Kumar",
-    "url":"https://gulshan-kumar-ai.github.io",
-    "sameAs":["https://github.com/gulshan-kumar-ai","https://www.linkedin.com/in/gulshan-kumar-ai","https://www.youtube.com/@gulshanineurope"],
-    "jobTitle":"AI Student",
-    "affiliation":"University of Verona"
-  }
-  </script>
+/* Light theme */
+:root.light {
+  --bg: #fbfbfc;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #0ea5a4;
+  --accent2: #2563eb;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #0d0d0d);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--text);
+  line-height: 1.6;
+}
 
-  <!-- Header -->
-  <header>
-    <nav class="container">
-      <div class="logo">GK</div>
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-  <!-- Hero Section -->
-  <section class="hero page-section" id="home">
-    <div class="container hero-content">
-      <img src="images/profile.png" alt="Gulshan Kumar" class="profile-pic">
-      <h1 class="gradient-text">Hi, I'm Gulshan Kumar</h1>
-      <p>AI Student • ML Practitioner • YouTuber • Youth Mentor</p>
-      <div class="hero-buttons">
-        <a href="about.html" class="btn btn-primary">Learn More</a>
-        <a href="Gulshan_Kumar_Resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
-      </div>
-    </div>
-  </section>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  <!-- Section Previews -->
-  <section class="page-section">
-    <div class="container">
-      <h2 class="gradient-text">About Me</h2>
-      <p>Pursuing a Master's in Artificial Intelligence at the University of Verona. Passionate about AI, ML, and mentoring young talent.</p>
-      <a href="about.html" class="btn btn-primary">Read More</a>
-    </div>
-  </section>
+/* Header */
+header {
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,255,136,0.3);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-  <section class="page-section">
-    <div class="container">
-      <h2 class="gradient-text">Skills</h2>
-      <p>AI, ML, Python, Data Analysis, Leadership, Mentorship.</p>
-      <a href="skills.html" class="btn btn-primary">Explore Skills</a>
-    </div>
-  </section>
+/* Hero */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 1rem 3rem;
+}
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; color: var(--muted); }
+.hero-buttons a { margin: 0 0.5rem; }
 
-  <section class="page-section">
-    <div class="container">
-      <h2 class="gradient-text">Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="images/project-surgical.jpg" alt="Surgical Workflow">
-          <h3>Surgical Workflow Analysis</h3>
-          <p>PyTorch, OpenCV | Accuracy: 86%</p>
-          <a href="projects.html" class="btn btn-secondary">View Project</a>
-        </div>
-        <div class="project-card">
-          <img src="images/project-farming.jpg" alt="Smart Farming AI">
-          <h3>AI in Smart Farming</h3>
-          <p>Machine Learning, IoT | Optimized yield predictions</p>
-          <a href="projects.html" class="btn btn-secondary">View Project</a>
-        </div>
-        <div class="project-card">
-          <img src="images/project-community.jpg" alt="Community Platform">
-          <h3>Community Platform</h3>
-          <p>Web App | 1,800 families onboarded</p>
-          <a href="projects.html" class="btn btn-secondary">View Project</a>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Buttons */
+.btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 30px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
+.btn-primary { background: linear-gradient(45deg, var(--accent), var(--accent2)); color: #000; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,255,136,0.3); }
+.btn-secondary { border: 2px solid var(--accent); color: var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: #000; }
 
-  <section class="page-section">
-    <div class="container">
-      <h2 class="gradient-text">Experience</h2>
-      <p>Professional experience in AI research, mentoring, and content creation.</p>
-      <a href="experience.html" class="btn btn-primary">View Experience</a>
-    </div>
-  </section>
+/* Page Sections */
+.page-section { padding: 6rem 0 4rem; max-width: 1000px; margin: 0 auto; text-align: center; }
+.page-section h2 { font-size: 2.5rem; margin-bottom: 1.5rem; background: linear-gradient(45deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.page-section p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--muted); }
 
-  <section class="page-section">
-    <div class="container">
-      <h2 class="gradient-text">Achievements</h2>
-      <p>Awards for AI contributions, social initiatives, and content creation.</p>
-      <a href="achievements.html" class="btn btn-primary">View Achievements</a>
-    </div>
-  </section>
+/* Projects Grid */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.project-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,136,0.2); border-radius: 15px; overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,255,136,0.3); }
+.project-card img { width: 100%; height: 160px; object-fit: cover; }
+.project-card h3 { margin: 1rem 0 0.5rem; color: var(--accent); }
+.project-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
 
-  <section class="page-section">
-    <div class="container">
-      <h2 class="gradient-text">Get in Touch</h2>
-      <p>Let's collaborate or connect! Reach me via email, LinkedIn, or YouTube.</p>
-      <a href="contact.html" class="btn btn-primary">Contact Me</a>
-    </div>
-  </section>
+/* Footer */
+footer { background: rgba(0,0,0,0.85); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,255,136,0.3); }
+.footer-social { margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); transition: all 0.3s ease; }
+.footer-social a:hover { background: var(--accent); color: #000; transform: scale(1.1); }
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Gulshan Kumar. All rights reserved.</p>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/gulshan-kumar-ai/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/gulshan-kumar-ai" target="_blank">GitHub</a>
-        <a href="mailto:gulshankumar.ai@gmail.com">Email</a>
-        <a href="https://www.youtube.com/@gulshanineurope" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </footer>
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(30px); animation: fadeIn 1s forwards; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-  <!-- Theme Toggle -->
-  <button id="themeToggle">Toggle Theme</button>
-  <script>
-    const btn = document.getElementById('themeToggle');
-    function setTheme(t){
-      if(t==='light'){ document.documentElement.classList.add('light'); localStorage.theme='light'; }
-      else{ document.documentElement.classList.remove('light'); localStorage.theme='dark'; }
-    }
-    btn.addEventListener('click', ()=> setTheme(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
-    if(localStorage.theme==='light') setTheme('light');
-  </script>
-
-</body>
-</html>
+/* Responsive */
+@media(max-width:768px){
+  .hero h1 { font-size:2.5rem; }
+  .hero p { font-size:1rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+}
