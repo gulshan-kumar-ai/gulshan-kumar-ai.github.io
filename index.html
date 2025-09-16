@@ -3,8 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulshan Kumar - Portfolio</title>
+  <title>Gulshan Kumar — Portfolio</title>
   <meta name="description" content="Portfolio of Gulshan Kumar - AI Student, ML Practitioner, YouTuber, and Youth Mentor. Explore my skills, projects, experience, and achievements.">
+  
+  <!-- Open Graph & Twitter -->
+  <meta property="og:title" content="Gulshan Kumar — AI Student">
+  <meta property="og:description" content="Portfolio of Gulshan Kumar: AI, ML, YouTube, Youth Mentor">
+  <meta property="og:image" content="images/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Gulshan Kumar",
+    "url":"https://gulshan-kumar-ai.github.io",
+    "sameAs":["https://github.com/gulshan-kumar-ai","https://www.linkedin.com/in/gulshan-kumar-ai","https://www.youtube.com/@gulshanineurope"],
+    "jobTitle":"AI Student",
+    "affiliation":"University of Verona"
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +34,7 @@
     <nav class="container">
       <div class="logo">GK</div>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#home" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -27,7 +47,7 @@
 
   <!-- Hero Section -->
   <section class="hero page-section" id="home">
-    <div class="container">
+    <div class="container hero-content">
       <img src="images/Gulshan in europe png 1.png" alt="Gulshan Kumar" class="profile-pic">
       <h1 class="gradient-text">Hi, I'm Gulshan Kumar</h1>
       <p>AI Student • ML Practitioner • YouTuber • Youth Mentor</p>
@@ -42,7 +62,7 @@
   <section class="page-section">
     <div class="container">
       <h2 class="gradient-text">About Me</h2>
-      <p>I am pursuing a Master's in Artificial Intelligence at the University of Verona, passionate about AI, data, and technology.</p>
+      <p>I am pursuing a Master's in Artificial Intelligence at the University of Verona, passionate about AI, data, and technology. I create meaningful solutions via projects and mentorship.</p>
       <a href="about.html" class="btn">Read More</a>
     </div>
   </section>
@@ -51,7 +71,7 @@
   <section class="page-section">
     <div class="container">
       <h2 class="gradient-text">Skills</h2>
-      <p>Technical and soft skills including AI, ML, Python, Data Analysis, and Leadership.</p>
+      <p>Technical and soft skills including AI, ML, Python, Data Analysis, Leadership, and Mentorship.</p>
       <a href="skills.html" class="btn">Explore Skills</a>
     </div>
   </section>
@@ -60,8 +80,26 @@
   <section class="page-section">
     <div class="container">
       <h2 class="gradient-text">Projects</h2>
-      <p>Worked on multiple AI and ML projects that solve real-world problems.</p>
-      <a href="projects.html" class="btn">See Projects</a>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="images/project-surgical.jpg" alt="Surgical Workflow">
+          <h3>Surgical Workflow Analysis</h3>
+          <p>PyTorch, OpenCV | Accuracy: 86%</p>
+          <a href="projects.html" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="images/project-farming.jpg" alt="Smart Farming AI">
+          <h3>AI in Smart Farming</h3>
+          <p>Machine Learning, IoT | Optimized yield predictions</p>
+          <a href="projects.html" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="images/project-community.jpg" alt="Community Platform">
+          <h3>Community Platform</h3>
+          <p>Web App | 1,800 families onboarded</p>
+          <a href="projects.html" class="btn">View Project</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -69,7 +107,7 @@
   <section class="page-section">
     <div class="container">
       <h2 class="gradient-text">Experience</h2>
-      <p>Professional experience in AI, education, and mentoring young students.</p>
+      <p>Professional experience in AI research, mentoring, and content creation.</p>
       <a href="experience.html" class="btn">View Experience</a>
     </div>
   </section>
@@ -78,7 +116,7 @@
   <section class="page-section">
     <div class="container">
       <h2 class="gradient-text">Achievements</h2>
-      <p>Awarded for contributions in AI, social initiatives, and content creation.</p>
+      <p>Awards for AI contributions, social initiatives, and content creation.</p>
       <a href="achievements.html" class="btn">View Achievements</a>
     </div>
   </section>
@@ -104,6 +142,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" style="position:fixed;right:20px;bottom:20px;padding:10px;border-radius:8px;">Toggle Theme</button>
+  <script>
+    const btn = document.getElementById('themeToggle');
+    function setTheme(t){
+      if(t==='light'){ document.documentElement.classList.add('light'); localStorage.theme='light'; }
+      else{ document.documentElement.classList.remove('light'); localStorage.theme='dark'; }
+    }
+    btn.addEventListener('click', ()=> setTheme(document.documentElement.classList.contains('light') ? 'dark' : 'light'));
+    if(localStorage.theme==='light') setTheme('light');
+  </script>
 
 </body>
 </html>
